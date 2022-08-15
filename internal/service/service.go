@@ -22,13 +22,13 @@ func (s *service) AddValues() {
 
 	item := model.Student{
 		Name:    "Elliot",
-		Age:     25,
+		Age:     "25",
 		Hobbies: []string{"music", "games"},
 	}
-	s.client.CreateItem(item)
+	s.client.CreateItemWithHash(item)
 }
 
 func (s *service) GetValues() {
-	out := s.client.GetItem("id-1")
+	out := s.client.GetItemWithHash("id-1")
 	fmt.Printf("Received Item: %#v\n", out)
 }
